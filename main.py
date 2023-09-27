@@ -1,10 +1,8 @@
-# импортирование необходимых библиотек
 from pulp import *
 
 # инициализация модели
 model = LpProblem("Fashion_Supply_Chain_Optimization", LpMinimize)
 
-# объявление переменных
 x1 = LpVariable("Production_of_Product_1", 50)
 x2 = LpVariable("Production_of_Product_2", 75)
 x3 = LpVariable("Production_of_Product_3", 100)
@@ -44,7 +42,7 @@ model += z1 + z2 + z3 + z4 + z5 + z6 <= x3 + y3
 # решение задачи линейного программирования
 model.solve()
 
-# вывод результатов оптимизации
+
 print("Production of Product 1: ", x1.value())
 print("Production of Product 2: ", x2.value())
 print("Production of Product 3: ", x3.value())
